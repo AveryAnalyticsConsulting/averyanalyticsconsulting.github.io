@@ -5,114 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Avery Analytics | Small Business Consulting</title>
   <meta name="description" content="Helping blue-collar professionals grow their business with lead generation and digital strategy.">
-  
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
-    color: #222;
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  header {
-    text-align: center;
-    padding: 4em 2em;
-    background: #f5f5f5;
-  }
-
-  .logo {
-    max-width: 200px;
-    margin-bottom: 1.5em;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin: 0.5em 0;
-  }
-
-  .cta {
-    font-size: 1.1rem;
-    margin-bottom: 1.5em;
-  }
-
-  .btn {
-    background-color: #000;
-    color: white;
-    padding: 0.75em 1.5em;
-    text-decoration: none;
-    border-radius: 4px;
-  }
-
-  section {
-    padding: 2em;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-  }
-
-  /* Form styling */
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-
-  form label {
-    font-weight: bold;
-  }
-
-  form .btn {
-    background-color: #000;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-
-  form .btn:hover {
-    background-color: #333;
-  }
-
-  .form-container {
-    position: relative;
-    width: 100%;
-    padding-top: 200%; /* Gives form more room */
-    overflow: hidden;
-  }
-
-  .form-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
-  }
-
-  @media (max-width: 768px) {
-    .form-container {
-      padding-top: 250%; /* More vertical space for mobile users */
+  <style>
+    * {
+      box-sizing: border-box;
     }
-  }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
 
-  footer {
-    text-align: center;
-    padding: 1.5em;
-    font-size: 0.9em;
-    background: #eee;
-    margin-top: 4em;
-  }
-</style>
+    header {
+      text-align: center;
+      padding: 3em 2em;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
 
+    .logo {
+      max-width: 180px;
+      margin-bottom: 1.2em;
+    }
 
-  <!-- ✅ Google Analytics Tag -->
+    .cta {
+      font-size: 1.125rem;
+      color: #444;
+      margin-bottom: 1em;
+    }
+
+    section {
+      padding: 2em;
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      margin-top: 2em;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5em;
+      color: #222;
+    }
+
+    form label {
+      display: block;
+      font-weight: 600;
+      margin-top: 1.2em;
+      margin-bottom: 0.25em;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn,
+    form .btn {
+      background-color: #000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1.5em;
+      transition: background-color 0.3s;
+    }
+
+    form .btn:hover {
+      background-color: #333;
+    }
+
+    form .btn-reset {
+      background-color: #e0e0e0;
+      color: #333;
+      margin-left: 10px;
+    }
+
+    #confirmation-message {
+      font-weight: 500;
+      margin-top: 1.5em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 1em;
+      font-size: 0.875rem;
+      color: #777;
+    }
+  </style>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -134,43 +130,47 @@
   </section>
 
   <section id="form">
-  <h2>Tell Us About Your Business</h2>
+    <h2>Tell Us About Your Business</h2>
+    <form id="intake-form">
+      <label for="name">Your Full Name</label>
+      <input type="text" id="name" name="name" required>
 
-  <form id="intake-form" style="text-align: left; max-width: 600px; margin: 2em auto;">
-    <label for="name">Your Full Name</label><br>
-    <input type="text" id="name" name="name" required><br>
+      <label for="business">Business Name</label>
+      <input type="text" id="business" name="business" required>
 
-    <label for="business">Business Name</label><br>
-    <input type="text" id="business" name="business" required><br>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="email">Email Address</label><br>
-    <input type="email" id="email" name="email" required><br>
+      <label for="phone">Phone Number (XXX-XXX-XXXX)</label>
+      <input type="text" id="phone" name="phone">
 
-    <label for="phone">Phone Number (XXX-XXX-XXXX)</label><br>
-    <input type="text" id="phone" name="phone"><br>
+      <label for="website">Business Website (if any)</label>
+      <input type="text" id="website" name="website">
 
-    <label for="website">Business Website (if any)</label><br>
-    <input type="text" id="website" name="website"><br>
+      <label for="services">What services or products do you offer?</label>
+      <textarea id="services" name="services" rows="3" required></textarea>
 
-    <label for="services">What services or products do you offer?</label><br>
-    <textarea id="services" name="services" rows="4" required></textarea><br>
+      <label for="challenges">What’s your biggest challenge right now?</label>
+      <textarea id="challenges" name="challenges" rows="3"></textarea>
 
-    <label for="challenges">What’s your biggest challenge right now?</label><br>
-    <textarea id="challenges" name="challenges" rows="4"></textarea><br>
+      <label for="goals">What are your goals for the next 6 months?</label>
+      <textarea id="goals" name="goals" rows="3"></textarea>
 
-    <label for="goals">What are your goals for the next 6 months?</label><br>
-    <textarea id="goals" name="goals" rows="4"></textarea><br>
+      <label for="notes">Anything else you'd like me to know?</label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
 
-    <label for="notes">Anything else you'd like me to know?</label><br>
-    <textarea id="notes" name="notes" rows="3"></textarea><br>
+      <div style="display: flex; gap: 10px;">
+        <button type="submit" class="btn">Submit</button>
+        <button type="reset" class="btn btn-reset">Clear All</button>
+      </div>
 
-    <div style="display: flex; gap: 10px; align-items: center;">
-      <button type="submit" class="btn">Submit</button>
-      <button type="reset" class="btn" style="background-color: #888;">Clear All</button>
-    </div>
+      <p id="confirmation-message" style="display:none; color: green;"></p>
+    </form>
+  </section>
 
-    <p id="confirmation-message" style="display:none; color: green; margin-top: 20px; font-weight: bold;"></p>
-  </form>
+  <footer>
+    © 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a>
+  </footer>
 
   <script>
     const form = document.getElementById("intake-form");
@@ -203,10 +203,5 @@
         });
     });
   </script>
-</section>
-
-  <footer>
-    © 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a>
-  </footer>
 </body>
 </html>
