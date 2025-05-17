@@ -50,6 +50,35 @@
     text-align: center;
   }
 
+  /* Form styling */
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  form label {
+    font-weight: bold;
+  }
+
+  form .btn {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  form .btn:hover {
+    background-color: #333;
+  }
+
   .form-container {
     position: relative;
     width: 100%;
@@ -82,6 +111,7 @@
   }
 </style>
 
+
   <!-- ✅ Google Analytics Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
   <script>
@@ -108,17 +138,37 @@
   <section id="form">
   <h2>Tell Us About Your Business</h2>
   <p>We’ll follow up within 24 hours.</p>
-  <div class="form-container">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSfreLOBb-9bUaDQVeQKD_4zJRglxot2hGa46W0f515xVMQqiw/viewform?embedded=true" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0" 
-      loading="lazy"
-      allowfullscreen>
-      Loading…
-    </iframe>
-  </div>
+
+  <form action="https://script.google.com/macros/s/AKfycbx5cAK8333mUro0NASlAF2z1lrJsWMiG0M0d3SWm8eRCqrvOzQM7oTpALjgiqI8OoLjOw/exec" method="POST" style="text-align: left; max-width: 600px; margin: 2em auto;">
+    <label for="name">Your Full Name</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="business">Business Name</label><br>
+    <input type="text" id="business" name="business" required><br><br>
+
+    <label for="email">Email Address</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="phone">Phone Number</label><br>
+    <input type="text" id="phone" name="phone"><br><br>
+
+    <label for="website">Business Website (if any)</label><br>
+    <input type="text" id="website" name="website"><br><br>
+
+    <label for="services">What services or products do you offer?</label><br>
+    <textarea id="services" name="services" rows="4" required></textarea><br><br>
+
+    <label for="challenges">What’s your biggest challenge right now?</label><br>
+    <textarea id="challenges" name="challenges" rows="4"></textarea><br><br>
+
+    <label for="goals">What are your goals for the next 6 months?</label><br>
+    <textarea id="goals" name="goals" rows="4"></textarea><br><br>
+
+    <label for="notes">Anything else you'd like me to know?</label><br>
+    <textarea id="notes" name="notes" rows="3"></textarea><br><br>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
 </section>
 
   <section id="calendar">
