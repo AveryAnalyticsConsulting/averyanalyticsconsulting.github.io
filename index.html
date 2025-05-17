@@ -17,7 +17,7 @@
       padding: 60px 20px;
     }
     header {
-      max-width: 600px;
+      max-width: 700px;
     }
     h1 {
       font-size: 2.5rem;
@@ -40,19 +40,50 @@
     .cta-button:hover {
       background-color: #005fa3;
     }
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 700px;
+      height: 600px;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
     footer {
       margin-top: 80px;
       font-size: 0.9rem;
       color: #888;
     }
   </style>
+
+  <!-- ✅ Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NKJQXGX03F');
+  </script>
 </head>
 <body>
   <header>
     <h1>Grow Your Business with Avery Analytics</h1>
     <p>We help local service professionals get found, get leads, and get paid — without needing to be tech experts. If you're a contractor, consultant, or independent pro, we'll build your online system and make the phone ring.</p>
-    <a href="mailto:andrew@averyanalytics.net" class="cta-button">Request a Free Consultation</a>
+    <a href="#form" class="cta-button">Get a Free Consultation</a>
   </header>
+
+  <!-- ✅ Lead Capture Form Embed (Replace URL below with your actual form embed URL) -->
+  <section id="form">
+    <h2 style="margin-top:60px;">Tell Us About Your Business</h2>
+    <p>We’ll follow up within 24 hours.</p>
+    <iframe src="https://docs.google.com/forms/d/e/YOUR-FORM-ID/viewform?embedded=true">Loading…</iframe>
+  </section>
+
+  <!-- ✅ Optional: Google Calendar Embed (Replace with your calendar link if needed) -->
+  <section id="calendar">
+    <h2 style="margin-top:60px;">View Our Calendar</h2>
+    <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_email%40gmail.com&ctz=America%2FNew_York" style="height:600px;"></iframe>
+  </section>
 
   <footer>
     © 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a>
