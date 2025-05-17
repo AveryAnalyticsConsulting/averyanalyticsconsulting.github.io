@@ -5,58 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Avery Analytics | Small Business Consulting</title>
   <meta name="description" content="Helping blue-collar professionals grow their business with lead generation and digital strategy.">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #222;
-    }
-    header {
-      text-align: center;
-      padding: 4em 2em;
-      background: #f5f5f5;
-    }
-    .logo {
-      max-width: 200px;
-      margin-bottom: 1.5em;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0.5em 0;
-    }
-    .cta {
-      font-size: 1.1rem;
-      margin-bottom: 1.5em;
-    }
-    .btn {
-      background-color: #000;
-      color: white;
-      padding: 0.75em 1.5em;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    section {
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 2em;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5em;
-      font-size: 0.9em;
-      background: #eee;
-      margin-top: 4em;
-    }
-  </style>
+  
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #222;
+  }
+  header {
+    text-align: center;
+    padding: 4em 2em;
+    background: #f5f5f5;
+  }
+  .logo {
+    max-width: 200px;
+    margin-bottom: 1.5em;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 0.5em 0;
+  }
+  .cta {
+    font-size: 1.1rem;
+    margin-bottom: 1.5em;
+  }
+  .btn {
+    background-color: #000;
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  section {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  .form-container {
+    position: relative;
+    width: 100%;
+    padding-top: 160%; /* Adjust this if you want a taller or shorter form */
+    overflow: hidden;
+  }
+  .form-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5em;
+    font-size: 0.9em;
+    background: #eee;
+    margin-top: 4em;
+  }
+</style>
 
   <!-- ✅ Google Analytics Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
@@ -84,17 +93,17 @@
   <section id="form">
   <h2>Tell Us About Your Business</h2>
   <p>We’ll follow up within 24 hours.</p>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfreLOBb-9bUaDQVeQKD_4zJRglxot2hGa46W0f515xVMQqiw/viewform?embedded=true" 
-    width="100%" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0"
-    loading="lazy"
-  >
-    Loading…
-  </iframe>
+  <div class="form-container">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfreLOBb-9bUaDQVeQKD_4zJRglxot2hGa46W0f515xVMQqiw/viewform?embedded=true" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      loading="lazy"
+      allowfullscreen>
+      Loading…
+    </iframe>
+  </div>
 </section>
 
   <section id="calendar">
