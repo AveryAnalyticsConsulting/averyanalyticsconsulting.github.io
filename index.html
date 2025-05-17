@@ -139,36 +139,73 @@
   <h2>Tell Us About Your Business</h2>
   <p>We’ll follow up within 24 hours.</p>
 
-  <form action="https://script.google.com/macros/s/AKfycbx5cAK8333mUro0NASlAF2z1lrJsWMiG0M0d3SWm8eRCqrvOzQM7oTpALjgiqI8OoLjOw/exec" method="POST" style="text-align: left; max-width: 600px; margin: 2em auto;">
+  <form id="intake-form" style="text-align: left; max-width: 600px; margin: 2em auto;">
     <label for="name">Your Full Name</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <input type="text" id="name" name="name" required><br>
 
     <label for="business">Business Name</label><br>
-    <input type="text" id="business" name="business" required><br><br>
+    <input type="text" id="business" name="business" required><br>
 
     <label for="email">Email Address</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" required><br>
 
     <label for="phone">Phone Number</label><br>
-    <input type="text" id="phone" name="phone"><br><br>
+    <input type="text" id="phone" name="phone"><br>
 
     <label for="website">Business Website (if any)</label><br>
-    <input type="text" id="website" name="website"><br><br>
+    <input type="text" id="website" name="website"><br>
 
     <label for="services">What services or products do you offer?</label><br>
-    <textarea id="services" name="services" rows="4" required></textarea><br><br>
+    <textarea id="services" name="services" rows="4" required></textarea><br>
 
     <label for="challenges">What’s your biggest challenge right now?</label><br>
-    <textarea id="challenges" name="challenges" rows="4"></textarea><br><br>
+    <textarea id="challenges" name="challenges" rows="4"></textarea><br>
 
     <label for="goals">What are your goals for the next 6 months?</label><br>
-    <textarea id="goals" name="goals" rows="4"></textarea><br><br>
+    <textarea id="goals" name="goals" rows="4"></textarea><br>
 
     <label for="notes">Anything else you'd like me to know?</label><br>
-    <textarea id="notes" name="notes" rows="3"></textarea><br><br>
+    <textarea id="notes" name="notes" rows="3"></textarea><br>
 
-    <button type="submit" class="btn">Submit</button>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <button type="submit" class="btn">Submit</button>
+      <button type="reset" class="btn" style="background-color: #888;">Clear All</button>
+    </div>
+
+    <p id="confirmation-message" style="display:none; color: green; margin-top: 20px; font-weight: bold;"></p>
   </form>
+
+  <script>
+    const form = document.getElementById("intake-form");
+    const confirmationMessage = document.getElementById("confirmation-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      fetch("https://script.google.com/macros/s/AKfycbwH_5rmnmFd8bDh_61E_U0alHDWBgDH6D7PYdT-W-2hMa5ib5n70gzzG_BpuCKY0Ub1/exec", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            form.reset();
+            confirmationMessage.innerText = "Thank you! We’ve received your information and will reach out shortly.";
+            confirmationMessage.style.display = "block";
+            confirmationMessage.style.color = "green";
+          } else {
+            confirmationMessage.innerText = "Something went wrong. Please try again.";
+            confirmationMessage.style.color = "red";
+            confirmationMessage.style.display = "block";
+          }
+        })
+        .catch((error) => {
+          confirmationMessage.innerText = "Submission failed. Please try again later.";
+          confirmationMessage.style.color = "red";
+          confirmationMessage.style.display = "block";
+        });
+    });
+  </script>
 </section>
 
   <section id="calendar">
