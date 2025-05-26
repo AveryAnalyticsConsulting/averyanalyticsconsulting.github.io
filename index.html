@@ -44,6 +44,17 @@
       color: #111;
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    
+    /* Animation effects */
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ---------- Header ----------*/
@@ -86,6 +97,22 @@
       font-size: 1.5rem;
       margin-bottom: 0.5em;
       color: #222;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 3px;
+      width: 60px;
+      background-color: #000;
+      transition: width 0.3s;
+    }
+    
+    section:hover h2::after {
+      width: 100px;
     }
 
     /* ---------- Form styles ----------*/
@@ -110,10 +137,27 @@
       font-size: 1rem;
       cursor: pointer;
       margin-top: 1.5em;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-    form .btn:hover { background-color: #333; }
-    form .btn-reset { background-color: #e0e0e0; color: #333; margin-left: 10px; }
+    
+    form .btn:hover { 
+      background-color: #333; 
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    form .btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+    
+    form .btn-reset { 
+      background-color: #e0e0e0; 
+      color: #333; 
+      margin-left: 10px; 
+    }
 
     #confirmation-message { font-weight: 500; margin-top: 1.5em; }
 
@@ -202,7 +246,86 @@
         }
       }
     }
-  </style>
+      /* Service boxes */
+    .service-boxes {
+      display: flex;
+      gap: 15px;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .service-box {
+      flex: 1;
+      min-width: 180px;
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+    
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #000;
+    }
+    
+    .service-box .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .service-box h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+    
+    /* Highlight box */
+    .highlight-box {
+      background-color: #f8f4e5;
+      border-left: 4px solid #000;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-weight: 500;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+    
+    .back-to-top.visible {
+      opacity: 0.7;
+      pointer-events: auto;
+    }
+    
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+    
+    @media (max-width: 480px) {
+      .service-boxes {
+        flex-direction: column;
+      }
+    }
+</style>
 
   <!-- Structured Data - LocalBusiness -->
   <script type="application/ld+json">
@@ -257,15 +380,34 @@
   </header>
 
   <main>
-    <section id="intro">
+    <section id="intro" class="fade-in">
       <h1 style="font-size: 1.5rem; margin-bottom: 0.5em; color: #222;">Norfolk's Local QuickBooks Bookkeeping Services</h1>
       <p>Based in Norfolk, we provide <strong>professional bookkeeping services</strong> for local small businesses throughout Virginia. Our core services focus on <strong>QuickBooks management</strong>, including transaction categorization, account reconciliation, and detailed monthly financial reports.</p>
       <p>We also offer additional <strong>business consulting services</strong> to help with your growth strategy, and can develop custom tools and systems to improve your business operations. Our goal is to give you clear financial visibility while you focus on running your business.</p>
+      
+      <div class="service-boxes">
+        <div class="service-box">
+          <div class="icon">📊</div>
+          <h3>QuickBooks Management</h3>
+          <p>Transaction categorization and monthly reconciliation</p>
+        </div>
+        <div class="service-box">
+          <div class="icon">📈</div>
+          <h3>Financial Reports</h3>
+          <p>Clear monthly reporting to track your business performance</p>
+        </div>
+        <div class="service-box">
+          <div class="icon">💼</div>
+          <h3>Business Consulting</h3>
+          <p>Growth strategies and operational improvements</p>
+        </div>
+      </div>
     </section>
 
-  <section id="form">
+  <section id="form" class="fade-in">
     <h2>Need a Local Norfolk Bookkeeper?</h2>
     <p>Fill out this quick form to tell us about your bookkeeping needs. As a Norfolk-based QuickBooks specialist, I provide personalized bookkeeping services throughout Virginia.</p>
+    <p class="highlight-box">✨ Free 15-minute consultation available to discuss your bookkeeping needs</p>
     <form id="intake-form" aria-labelledby="form-heading" role="form">
       <label for="name">Your Full Name</label>
       <input type="text" id="name" name="name" required>
@@ -348,9 +490,9 @@
   <script src="js/script.js"></script>
 
   <!-- Appointment Booking Section -->
-  <section id="book-appointment">
+  <section id="book-appointment" class="fade-in">
     <h2>Schedule a Consultation</h2>
-    <p>Ready to discuss your business needs? Book a free 30-minute consultation.</p>
+    <p>Ready to discuss your bookkeeping needs? Book a <strong>free 15-minute consultation</strong> to see how we can help your business.</p>
     
     <div id="appointment-container" class="appointment-button-container">
       <!-- The appointment button will be loaded here -->
@@ -441,6 +583,52 @@
         }
       });
     })();
+  </script>
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top" id="backToTop">↑</a>
+  
+  <!-- Interactive elements script -->
+  <script>
+    // Fade in elements as they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Back to top button functionality
+      const backToTopButton = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+      
+      // Smooth scroll for all internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Add animation to sections as they come into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+    });
   </script>
 </body>
 </html>
