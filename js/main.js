@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', function() {
       navElement.classList.toggle('mobile-active');
+      this.classList.toggle('active');
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
       if (!navElement.contains(event.target) && event.target !== mobileMenuToggle) {
         navElement.classList.remove('mobile-active');
+        mobileMenuToggle.classList.remove('active');
       }
     });
     
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
         navElement.classList.remove('mobile-active');
+        mobileMenuToggle.classList.remove('active');
       });
     });
   }

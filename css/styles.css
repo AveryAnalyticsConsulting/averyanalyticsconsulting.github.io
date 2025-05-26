@@ -114,16 +114,12 @@ header {
 
 @media (max-width: 768px) {
   header {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
   }
   
   .header-container {
-    min-height: 50px;
-  }
-  
-  .logo {
-    max-height: 40px;
-    width: auto;
+    min-height: 60px;
+    padding: 0 10px;
   }
 }
 
@@ -139,16 +135,30 @@ header {
   align-items: center;
 }
 
+/* Logo styling */
 .logo {
-  height: 40px;
-  width: auto;
+  height: auto;
+  width: 180px;
+  max-width: 100%;
   display: block;
-  object-fit: contain;
+}
+
+/* Mobile-specific logo styling */
+@media (max-width: 767px) {
+  .logo {
+    width: 150px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (min-width: 768px) {
   .logo {
-    height: 50px;
+    width: 200px;
   }
 }
 
@@ -177,39 +187,67 @@ nav a:hover, nav a.active {
 }
 
 @media (max-width: 768px) {
+  /* Full-screen mobile menu */
   nav ul {
     flex-direction: column;
     position: fixed;
     top: 60px;
+    left: 0;
     right: 0;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    width: 200px;
-    transform: translateX(100%);
+    padding: 1.5rem;
+    width: 100%;
+    transform: translateY(-150%);
     transition: transform 0.3s ease;
     z-index: 1000;
     height: calc(100vh - 60px);
     overflow-y: auto;
+    text-align: center;
   }
   
   nav.mobile-active ul {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   
   nav li {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     margin-left: 0;
+    font-size: 1.2rem;
   }
   
   .mobile-menu-toggle {
     display: block;
-    background: none;
-    border: none;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 1.5rem;
     cursor: pointer;
     padding: 5px 10px;
     color: #333;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 1001;
+  }
+  
+  .menu-icon {
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  /* Add animation for menu toggle */
+  .mobile-menu-toggle:hover .menu-icon,
+  .mobile-menu-toggle.active .menu-icon {
+    color: var(--primary-color);
+  }
+  
+  /* Center the logo in mobile header */
+  .header-container {
+    position: relative;
+    justify-content: center;
   }
 }
 
