@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
+    /* ---------- Global resets ----------*/
+    *, *::before, *::after {
       box-sizing: border-box;
     }
     body {
@@ -21,31 +22,38 @@
       line-height: 1.6;
     }
 
+    /* ---------- Header ----------*/
     header {
-      text-align: center;
-      padding: 3em 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem 1rem;            /* reduced top/bottom padding */
       background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .logo {
-      max-width: 250px;
-      margin-bottom: 1.5em;
+      width: 180px;                     /* tighter logo size */
+      max-width: 70vw;                  /* responsive safety */
+      margin: 0;                        /* remove extra space */
     }
 
+    /* ---------- Typography ----------*/
     .cta {
       font-size: 1.125rem;
       color: #444;
-      margin-bottom: 1em;
+      margin: 0.75em 0 0;               /* pull text closer to logo */
+      text-align: center;
     }
 
+    /* ---------- Sections ----------*/
     section {
       padding: 2em;
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 640px;                /* a bit wider for readability */
+      margin: 2em auto 0 auto;
       background: #ffffff;
       border-radius: 12px;
-      margin-top: 2em;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
     }
 
@@ -55,6 +63,7 @@
       color: #222;
     }
 
+    /* ---------- Form styles ----------*/
     form label {
       display: block;
       font-weight: 600;
@@ -75,7 +84,7 @@
     .btn,
     form .btn {
       background-color: #000;
-      color: white;
+      color: #fff;
       padding: 12px 20px;
       border: none;
       border-radius: 8px;
@@ -100,20 +109,31 @@
       margin-top: 1.5em;
     }
 
+    /* ---------- Footer ----------*/
     footer {
       text-align: center;
       padding: 2em 1em;
       font-size: 0.875rem;
       color: #777;
     }
+
+    /* ---------- Small screens ----------*/
+    @media (max-width: 480px) {
+      .logo {
+        width: 150px;
+      }
+      section {
+        padding: 1.5em;
+        margin-top: 1.5em;
+      }
+    }
   </style>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NKJQXGX03F');
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NKJQXGX03F');
   </script>
 </head>
 
@@ -124,7 +144,7 @@
 
   <section>
     <h2>Our Approach</h2>
-    <p>We specialize in helping blue-collar and local service businesses create digital tools that bring in leads. Whether you're just starting or ready to scale, Avery Analytics builds simple, affordable systems that work.</p>
+    <p>We specialize in helping blue‑collar and local service businesses create digital tools that bring in leads. Whether you're just starting or ready to scale, Avery Analytics builds simple, affordable systems that work.</p>
   </section>
 
   <section id="form">
@@ -157,7 +177,7 @@
       <label for="notes">Anything else you'd like me to know?</label>
       <textarea id="notes" name="notes" rows="3"></textarea>
 
-      <div style="display: flex; gap: 10px;">
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
         <button type="submit" class="btn">Submit</button>
         <button type="reset" class="btn btn-reset">Clear All</button>
       </div>
@@ -170,57 +190,56 @@
     © 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a>
   </footer>
 
+  <!-- ---------- Form handler script ---------- -->
   <script>
     const form = document.getElementById("intake-form");
     const confirmationMessage = document.getElementById("confirmation-message");
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
-
       const formData = new FormData(form);
-      fetch("https://script.google.com/macros/s/AKfycbx5cAK8333mUro0NASlAF2z1lrJsWMiG0M0d3SWm8eRCqrvOzQM7oTpALjgiqI8OoLjOw/exec", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-          if (response.ok) {
-            form.reset();
-            confirmationMessage.innerText = "Thank you! We’ve received your information and will reach out shortly.";
-            confirmationMessage.style.display = "block";
-            confirmationMessage.style.color = "green";
-          } else {
-            confirmationMessage.innerText = "Something went wrong. Please try again.";
-            confirmationMessage.style.color = "red";
-            confirmationMessage.style.display = "block";
-          }
-        })
-        .catch((error) => {
-          confirmationMessage.innerText = "Submission failed. Please try again later.";
-          confirmationMessage.style.color = "red";
-          confirmationMessage.style.display = "block";
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbx5cAK8333mUro0NASlAF2z1lrJsWMiG0M0d3SWm8eRCqrvOzQM7oTpALjgiqI8OoLjOw/exec", {
+          method: "POST",
+          body: formData,
         });
+        if (response.ok) {
+          form.reset();
+          confirmationMessage.textContent = "Thank you! We’ve received your information and will reach out shortly.";
+          confirmationMessage.style.color = "green";
+        } else {
+          confirmationMessage.textContent = "Something went wrong. Please try again.";
+          confirmationMessage.style.color = "red";
+        }
+      } catch (err) {
+        confirmationMessage.textContent = "Submission failed. Please try again later.";
+        confirmationMessage.style.color = "red";
+      }
+      confirmationMessage.style.display = "block";
     });
   </script>
+
+  <!-- ---------- External assets ---------- -->
   <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<script src="js/chatbot.js"></script>
-<script src="js/script.js"></script>
-  <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-(function() {
-  var target = document.currentScript;
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true',
-      color: '#039BE5',
-      label: 'Book an appointment',
-      target,
-    });
-  });
-})();
-</script>
-<!-- end Google Calendar Appointment Scheduling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="js/chatbot.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Google Calendar Appointment Scheduling -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+  <script>
+    (function() {
+      var target = document.currentScript;
+      window.addEventListener('load', function() {
+        calendar.schedulingButton.load({
+          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true',
+          color: '#039BE5',
+          label: 'Book an appointment',
+          target,
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
