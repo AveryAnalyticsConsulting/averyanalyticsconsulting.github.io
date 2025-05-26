@@ -26,15 +26,16 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem 1rem;
+      padding: 0.25rem 0;   /* minimal whitespace */
       background: #fff;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .logo {
-      width: 250px;              /* desktop default */
+      width: 250px;          /* keep same desktop size */
       max-width: 70vw;
-      margin: 0;
+      margin: 0;             /* no extra margin */
+      display: block;
     }
 
     /* ---------- Typography ----------*/
@@ -49,7 +50,7 @@
     section {
       padding: 2em;
       max-width: 640px;
-      margin: 2em auto 0 auto;
+      margin: 1em auto 0 auto; /* reduced gap below logo */
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
@@ -100,17 +101,13 @@
 
     /* ---------- Small screens ----------*/
     @media (max-width: 480px) {
-      header {
-        height: 100vh;            /* fill entire viewport */
-        padding: 0;               /* remove extra space */
-      }
       .logo {
-        width: 90vw;             /* nearly full‑width logo */
-        max-width: none;
+        width: 150px;      /* keep original mobile size */
+        max-width: 80vw;
       }
       section {
         padding: 1.5em;
-        margin-top: 1.5em;
+        margin-top: 1em;  /* reduced gap */
       }
     }
   </style>
@@ -145,7 +142,7 @@
       <label for="email">Email Address</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="phone">Phone Number (XXX-XXX-XXXX)</label>
+      <label for="phone">Phone Number (XXX‑XXX‑XXXX)</label>
       <input type="text" id="phone" name="phone">
 
       <label for="website">Business Website (if any)</label>
