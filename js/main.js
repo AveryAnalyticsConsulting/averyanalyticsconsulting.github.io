@@ -11,6 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuToggle.addEventListener('click', function() {
       navElement.classList.toggle('mobile-active');
     });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navElement.contains(event.target) && event.target !== mobileMenuToggle) {
+        navElement.classList.remove('mobile-active');
+      }
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navElement.classList.remove('mobile-active');
+      });
+    });
   }
 
   // Back to top button
