@@ -149,13 +149,30 @@
           message.innerHTML = '(Opens in your default browser for better experience)';
           container.appendChild(message);
         } else {
-          // For non-Instagram users, load the normal calendar button
-          calendar.schedulingButton.load({
-            url: calendarUrl,
-            color: '#000000',
-            label: 'Book an Appointment',
-            target: container,
+          // Create a custom button for all users that opens in a new tab
+          var customButton = document.createElement('button');
+          customButton.className = 'btn';
+          customButton.innerHTML = 'Book an Appointment';
+          customButton.style.width = '100%';
+          customButton.style.maxWidth = '300px';
+          customButton.style.margin = '0 auto';
+          customButton.style.display = 'block';
+          customButton.style.padding = '10px 20px';
+          customButton.style.backgroundColor = '#0056b3';
+          customButton.style.color = 'white';
+          customButton.style.border = 'none';
+          customButton.style.borderRadius = '4px';
+          customButton.style.cursor = 'pointer';
+          
+          customButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Open in a new tab
+            window.open(calendarUrl, '_blank');
           });
+          
+          // Clear container and add our custom button
+          container.innerHTML = '';
+          container.appendChild(customButton);
           
           // Function to adjust iframe and button for mobile
           function adjustForMobile() {
