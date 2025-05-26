@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
   <title>Avery Analytics | Bookkeeping & Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +91,46 @@
 
     #confirmation-message { font-weight: 500; margin-top: 1.5em; }
 
+    /* ---------- Appointment Booking ----------*/
+    .appointment-button-container {
+      margin: 1.5em 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .appointment-button-container > div {
+      width: 100% !important;
+      max-width: 300px;
+    }
+    
+    /* Ensure Google Calendar button is responsive */
+    .appointment-button-container button {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: 48px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px !important;
+      white-space: normal !important;
+      line-height: 1.3 !important;
+      font-size: 16px !important;
+      text-align: center !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+    
+    /* Fix for Instagram in-app browser */
+    #book-appointment {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
     /* ---------- Footer ----------*/
     footer {
       text-align: center;
@@ -108,6 +148,32 @@
       section {
         padding: 1.5em;
         margin-top: 1em;  /* reduced gap */
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+      
+      /* Mobile-friendly appointment button */
+      .appointment-button-container button {
+        font-size: 14px !important;
+        padding: 10px 12px !important;
+        min-width: 0 !important;
+      }
+      
+      /* Instagram in-app browser and other very narrow viewports */
+      @media (max-width: 360px) {
+        section {
+          padding: 1em;
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+        }
+        
+        .appointment-button-container > div {
+          max-width: 100%;
+        }
+        
+        .appointment-button-container button {
+          padding: 8px 10px !important;
+        }
       }
     }
   </style>
@@ -208,19 +274,65 @@
   <script src="js/chatbot.js"></script>
   <script src="js/script.js"></script>
 
+  <!-- Appointment Booking Section -->
+  <section id="book-appointment">
+    <h2>Schedule a Consultation</h2>
+    <p>Ready to discuss your business needs? Book a free 30-minute consultation.</p>
+    
+    <div id="appointment-container" class="appointment-button-container">
+      <!-- The appointment button will be loaded here -->
+    </div>
+  </section>
+
   <!-- Google Calendar Appointment Scheduling -->
   <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
   <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
   <script>
     (function() {
-      var target = document.currentScript;
       window.addEventListener('load', function() {
+        // Get the container where we want to place the button
+        var container = document.getElementById('appointment-container');
+        
         calendar.schedulingButton.load({
           url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true',
           color: '#000000',
           label: 'Book an Appointment',
-          target,
+          target: container,
         });
+        
+        // Function to adjust iframe and button for mobile/Instagram
+        function adjustForMobile() {
+          var iframe = document.querySelector('#appointment-container iframe');
+          var button = document.querySelector('#appointment-container button');
+          
+          if (iframe) {
+            iframe.style.maxWidth = '100%';
+            iframe.style.width = '100%';
+            iframe.style.minHeight = '85px';
+            iframe.style.border = 'none';
+          }
+          
+          if (button) {
+            // Detect if in Instagram browser or similar narrow viewport
+            if (window.innerWidth <= 400 || /Instagram/.test(navigator.userAgent)) {
+              button.style.fontSize = '14px';
+              button.style.padding = '8px 10px';
+              button.style.width = '100%';
+              
+              // Adjust container as well
+              var buttonContainer = document.querySelector('.appointment-button-container > div');
+              if (buttonContainer) {
+                buttonContainer.style.maxWidth = '100%';
+              }
+            }
+          }
+        }
+        
+        // Initial adjustment after short delay to ensure button is loaded
+        window.setTimeout(adjustForMobile, 1000);
+        
+        // Also adjust on resize events
+        window.addEventListener('resize', adjustForMobile);
       });
     })();
   </script>
