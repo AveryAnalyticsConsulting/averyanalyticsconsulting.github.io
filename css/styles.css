@@ -163,6 +163,7 @@ header {
 }
 
 /* ---------- Navigation ----------*/
+/* Navigation list styling */
 nav ul {
   display: flex;
   list-style: none;
@@ -189,6 +190,7 @@ nav a:hover, nav a.active {
 @media (max-width: 768px) {
   /* Full-screen mobile menu */
   nav ul {
+    list-style: none;
     flex-direction: column;
     position: fixed;
     top: 60px;
