@@ -33,6 +33,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
 
   <style>
     /* ---------- Global resets ----------*/
@@ -373,42 +376,86 @@
 
 <body>
   <header>
-    <div class="logo-container">
-      <img src="assets/logo.png" alt="Avery Analytics Logo" class="logo">
+    <div class="container header-container">
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Avery Analytics Logo" class="logo">
+        </a>
+      </div>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="pages/services.html">Services</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/booking.html">Book Appointment</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav aria-label="Main Navigation" style="display:none"><!-- Hidden for future navigation implementation --></nav>
   </header>
 
   <main>
-    <section id="intro" class="fade-in">
-      <h1 style="font-size: 1.5rem; margin-bottom: 0.5em; color: #222;">Norfolk's Local QuickBooks Bookkeeping Services</h1>
-      <p>Based in Norfolk, we provide <strong>professional bookkeeping services</strong> for local small businesses throughout Virginia. Our core services focus on <strong>QuickBooks management</strong>, including transaction categorization, account reconciliation, and detailed monthly financial reports.</p>
-      <p>We also offer additional <strong>business consulting services</strong> to help with your growth strategy, and can develop custom tools and systems to improve your business operations. Our goal is to give you clear financial visibility while you focus on running your business.</p>
-      
-      <div class="service-boxes">
-        <div class="service-box">
-          <div class="icon">📊</div>
-          <h3>QuickBooks Management</h3>
-          <p>Transaction categorization and monthly reconciliation</p>
+    <div class="container">
+      <section id="intro" class="animate-on-scroll fade-in">
+        <h1>Norfolk's Local QuickBooks Bookkeeping Services</h1>
+        <p>Based in Norfolk, we provide <strong>professional bookkeeping services</strong> for local small businesses throughout Virginia. Our core services focus on <strong>QuickBooks management</strong>, including transaction categorization, account reconciliation, and detailed monthly financial reports.</p>
+        
+        <div class="highlight-box">
+          <p>✨ Free 15-minute consultation available to discuss your bookkeeping needs</p>
+          <a href="pages/booking.html" class="btn">Book Your Consultation</a>
         </div>
-        <div class="service-box">
-          <div class="icon">📈</div>
-          <h3>Financial Reports</h3>
-          <p>Clear monthly reporting to track your business performance</p>
+        
+        <div class="service-boxes">
+          <div class="service-box">
+            <div class="icon">📊</div>
+            <h3>QuickBooks Management</h3>
+            <p>Transaction categorization and monthly reconciliation</p>
+            <a href="pages/services.html#quickbooks" class="btn" style="margin-top: 1rem;">Learn More</a>
+          </div>
+          <div class="service-box">
+            <div class="icon">📈</div>
+            <h3>Financial Reports</h3>
+            <p>Clear monthly reporting to track your business performance</p>
+            <a href="pages/services.html#reports" class="btn" style="margin-top: 1rem;">Learn More</a>
+          </div>
+          <div class="service-box">
+            <div class="icon">💼</div>
+            <h3>Business Consulting</h3>
+            <p>Growth strategies and operational improvements</p>
+            <a href="pages/services.html#consulting" class="btn" style="margin-top: 1rem;">Learn More</a>
+          </div>
         </div>
-        <div class="service-box">
-          <div class="icon">💼</div>
-          <h3>Business Consulting</h3>
-          <p>Growth strategies and operational improvements</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-  <section id="form" class="fade-in">
-    <h2>Need a Local Norfolk Bookkeeper?</h2>
-    <p>Fill out this quick form to tell us about your bookkeeping needs. As a Norfolk-based QuickBooks specialist, I provide personalized bookkeeping services throughout Virginia.</p>
-    <p class="highlight-box">✨ Free 15-minute consultation available to discuss your bookkeeping needs</p>
-    <form id="intake-form" aria-labelledby="form-heading" role="form">
+      <section id="about-preview" class="animate-on-scroll">
+        <h2>Why Choose Avery Analytics?</h2>
+        <p>At Avery Analytics, we believe that small businesses deserve professional bookkeeping without the high costs. We provide clear financial visibility so you can make informed decisions for your business.</p>
+        <ul>
+          <li><strong>QuickBooks Expertise</strong> - Specialized knowledge in setting up and managing QuickBooks for small businesses</li>
+          <li><strong>Local Service</strong> - Based in Norfolk, serving businesses throughout Virginia</li>
+          <li><strong>Personalized Approach</strong> - Tailored solutions for your specific business needs</li>
+        </ul>
+        <a href="pages/about.html" class="btn">Learn More About Us</a>
+      </section>
+      
+      <section id="contact-preview" class="animate-on-scroll">
+        <h2>Get In Touch</h2>
+        <p>Ready to discuss your bookkeeping needs? We offer multiple ways to connect:</p>
+        <div class="service-boxes">
+          <div class="service-box" style="text-align: center;">
+            <div class="icon">📅</div>
+            <h3>Schedule a Consultation</h3>
+            <p>Book a free 15-minute call to discuss your needs</p>
+            <a href="pages/booking.html" class="btn">Book Now</a>
+          </div>
+          <div class="service-box" style="text-align: center;">
+            <div class="icon">📝</div>
+            <h3>Contact Form</h3>
+            <p>Send us your questions and requirements</p>
+            <a href="pages/contact.html" class="btn">Contact Us</a>
+          </div>
+        </div>
       <label for="name">Your Full Name</label>
       <input type="text" id="name" name="name" required>
 
@@ -445,14 +492,18 @@
     </form>
   </section>
 
+    </div>
+  </main>
+
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a></p>
-      <p class="footer-tagline">Providing professional bookkeeping services in Norfolk and throughout Virginia since 2023</p>
-      <p class="footer-keywords" style="font-size: 0.75rem; opacity: 0.7;">Norfolk Bookkeeper · QuickBooks Services · Monthly Financial Reports · Business Consulting · Virginia Bookkeeping</p>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a></p>
+        <p class="footer-tagline">Providing professional bookkeeping services in Norfolk and throughout Virginia since 2023</p>
+        <p class="footer-keywords">Norfolk Bookkeeper · QuickBooks Services · Monthly Financial Reports · Business Consulting · Virginia Bookkeeping</p>
+      </div>
     </div>
   </footer>
-  </main>
 
   <!-- ---------- Form handler script ---------- -->
   <script>
@@ -499,9 +550,41 @@
     </div>
   </section>
 
-  <!-- Google Calendar Appointment Scheduling -->
-  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+  <!-- Structured Data - LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Avery Analytics",
+    "image": "https://averyanalyticsconsulting.github.io/assets/logo.png",
+    "url": "https://averyanalyticsconsulting.github.io/",
+    "telephone": "",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Norfolk",
+      "addressRegion": "VA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [],
+    "priceRange": "$$",
+    "description": "Local Norfolk, VA bookkeeping services specializing in QuickBooks. We handle transaction categorization, account reconciliation, and monthly reporting for small businesses throughout Virginia."
+  }
+  </script>
   <script>
     (function() {
       window.addEventListener('load', function() {
@@ -585,50 +668,9 @@
     })();
   </script>
   <!-- Back to top button -->
-  <a href="#" class="back-to-top" id="backToTop">↑</a>
+  <a href="#" class="back-to-top" id="back-to-top">↑</a>
   
-  <!-- Interactive elements script -->
-  <script>
-    // Fade in elements as they come into view
-    document.addEventListener('DOMContentLoaded', function() {
-      // Back to top button functionality
-      const backToTopButton = document.getElementById('backToTop');
-      
-      window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add('visible');
-        } else {
-          backToTopButton.classList.remove('visible');
-        }
-      });
-      
-      // Smooth scroll for all internal links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
-      // Add animation to sections as they come into view
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>

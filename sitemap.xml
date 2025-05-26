@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://averyanalyticsconsulting.github.io/</loc>
-    <lastmod>2025-05-26</lastmod>
+    <lastmod>2023-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://averyanalyticsconsulting.github.io/pages/services.html</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://averyanalyticsconsulting.github.io/pages/about.html</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://averyanalyticsconsulting.github.io/pages/contact.html</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://averyanalyticsconsulting.github.io/pages/booking.html</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

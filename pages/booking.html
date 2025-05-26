@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  
+  <!-- Primary Meta Tags -->
+  <title>Book a Consultation | Norfolk Bookkeeper | Avery Analytics</title>
+  <meta name="title" content="Book a Consultation | Norfolk Bookkeeper | Avery Analytics">
+  <meta name="description" content="Schedule a free 15-minute consultation with Avery Analytics, Norfolk's trusted bookkeeper. Discuss your business needs and learn how our QuickBooks bookkeeping services can help.">
+  <meta name="keywords" content="book bookkeeper appointment, Norfolk bookkeeping consultation, free bookkeeping consultation, QuickBooks specialist appointment, bookkeeping services Norfolk">
+  <meta name="author" content="Avery Analytics">
+  <link rel="canonical" href="https://averyanalyticsconsulting.github.io/pages/booking.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://averyanalyticsconsulting.github.io/pages/booking.html">
+  <meta property="og:title" content="Book a Consultation | Norfolk Bookkeeper | Avery Analytics">
+  <meta property="og:description" content="Schedule a free 15-minute consultation with Avery Analytics, Norfolk's trusted bookkeeper. Discuss your business needs and learn how our QuickBooks bookkeeping services can help.">
+  <meta property="og:image" content="https://averyanalyticsconsulting.github.io/assets/logo.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://averyanalyticsconsulting.github.io/pages/booking.html">
+  <meta property="twitter:title" content="Book a Consultation | Norfolk Bookkeeper | Avery Analytics">
+  <meta property="twitter:description" content="Schedule a free 15-minute consultation with Avery Analytics, Norfolk's trusted bookkeeper. Discuss your business needs and learn how our QuickBooks bookkeeping services can help.">
+  <meta property="twitter:image" content="https://averyanalyticsconsulting.github.io/assets/logo.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon.ico">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+  
+  <!-- Google Calendar Appointment Scheduling -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+</head>
+
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Avery Analytics Logo" class="logo">
+        </a>
+      </div>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html" class="active">Book Appointment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumbs">
+        <span><a href="../index.html">Home</a></span>
+        <span>Book Appointment</span>
+      </div>
+      
+      <section class="animate-on-scroll">
+        <h1>Schedule a Consultation</h1>
+        <p>Ready to discuss your bookkeeping needs? Book a <strong>free 15-minute consultation</strong> to see how we can help your business gain financial clarity.</p>
+        
+        <div class="highlight-box">
+          <p>During your consultation, we'll discuss:</p>
+          <ul>
+            <li>Your current bookkeeping setup and challenges</li>
+            <li>How our services can be tailored to your business needs</li>
+            <li>Pricing options that fit your budget</li>
+            <li>Next steps to get started</li>
+          </ul>
+        </div>
+        
+        <p>Use the calendar below to select a time that works for you:</p>
+        
+        <div id="appointment-container" class="appointment-button-container">
+          <!-- The appointment button will be loaded here -->
+        </div>
+        
+        <p style="margin-top: 2rem;">If you're having trouble with the booking system or don't see a time that works for you, please <a href="contact.html">contact us directly</a> to arrange an appointment.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a></p>
+        <p class="footer-tagline">Providing professional bookkeeping services in Norfolk and throughout Virginia since 2023</p>
+        <p class="footer-keywords">Norfolk Bookkeeper · QuickBooks Services · Monthly Financial Reports · Business Consulting · Virginia Bookkeeping</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top" id="back-to-top">↑</a>
+  
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  
+  <!-- Google Calendar Appointment Script -->
+  <script>
+    (function() {
+      window.addEventListener('load', function() {
+        // Check if we're in Instagram's in-app browser
+        var isInstagram = /Instagram/.test(navigator.userAgent);
+        var container = document.getElementById('appointment-container');
+        var calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true';
+        
+        if (isInstagram) {
+          // For Instagram users, create a custom button that opens in external browser
+          var customButton = document.createElement('button');
+          customButton.className = 'btn';
+          customButton.innerHTML = 'Book an Appointment';
+          customButton.style.width = '100%';
+          customButton.style.maxWidth = '300px';
+          customButton.style.margin = '0 auto';
+          customButton.style.display = 'block';
+          
+          customButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Open in external browser
+            window.open(calendarUrl, '_blank');
+          });
+          
+          // Clear container and add our custom button
+          container.innerHTML = '';
+          container.appendChild(customButton);
+          
+          // Add message below button
+          var message = document.createElement('p');
+          message.style.fontSize = '0.85em';
+          message.style.color = '#666';
+          message.style.textAlign = 'center';
+          message.style.marginTop = '10px';
+          message.innerHTML = '(Opens in your default browser for better experience)';
+          container.appendChild(message);
+        } else {
+          // For non-Instagram users, load the normal calendar button
+          calendar.schedulingButton.load({
+            url: calendarUrl,
+            color: '#000000',
+            label: 'Book an Appointment',
+            target: container,
+          });
+          
+          // Function to adjust iframe and button for mobile
+          function adjustForMobile() {
+            var iframe = document.querySelector('#appointment-container iframe');
+            var button = document.querySelector('#appointment-container button');
+            
+            if (iframe) {
+              iframe.style.maxWidth = '100%';
+              iframe.style.width = '100%';
+              iframe.style.minHeight = '85px';
+              iframe.style.border = 'none';
+            }
+            
+            if (button) {
+              // Apply special styling for smaller viewports
+              if (window.innerWidth <= 400) {
+                button.style.fontSize = '14px';
+                button.style.padding = '8px 10px';
+                button.style.width = '100%';
+                
+                // Adjust container as well
+                var buttonContainer = document.querySelector('.appointment-button-container > div');
+                if (buttonContainer) {
+                  buttonContainer.style.maxWidth = '100%';
+                }
+              }
+            }
+          }
+          
+          // Initial adjustment after short delay to ensure button is loaded
+          window.setTimeout(adjustForMobile, 1000);
+          
+          // Also adjust on resize events
+          window.addEventListener('resize', adjustForMobile);
+        }
+      });
+    })();
+  </script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NKJQXGX03F');
+  </script>
+</body>
+</html>
