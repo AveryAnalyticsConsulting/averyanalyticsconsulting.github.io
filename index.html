@@ -10,9 +10,7 @@
 
   <style>
     /* ---------- Global resets ----------*/
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -28,31 +26,31 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem 1rem;            /* reduced top/bottom padding */
-      background: #ffffff;
+      padding: 1.25rem 1rem;
+      background: #fff;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .logo {
-      width: 250px;                     /* tighter logo size */
-      max-width: 70vw;                  /* responsive safety */
-      margin: 0;                        /* remove extra space */
+      width: 250px;              /* desktop default */
+      max-width: 70vw;
+      margin: 0;
     }
 
     /* ---------- Typography ----------*/
     .cta {
       font-size: 1.125rem;
       color: #444;
-      margin: 0.75em 0 0;               /* pull text closer to logo */
+      margin: 0.75em 0 0;
       text-align: center;
     }
 
     /* ---------- Sections ----------*/
     section {
       padding: 2em;
-      max-width: 640px;                /* a bit wider for readability */
+      max-width: 640px;
       margin: 2em auto 0 auto;
-      background: #ffffff;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
     }
@@ -64,13 +62,7 @@
     }
 
     /* ---------- Form styles ----------*/
-    form label {
-      display: block;
-      font-weight: 600;
-      margin-top: 1.2em;
-      margin-bottom: 0.25em;
-    }
-
+    form label    { display: block; font-weight: 600; margin: 1.2em 0 0.25em; }
     form input,
     form textarea {
       width: 100%;
@@ -93,21 +85,10 @@
       margin-top: 1.5em;
       transition: background-color 0.3s;
     }
+    form .btn:hover { background-color: #333; }
+    form .btn-reset { background-color: #e0e0e0; color: #333; margin-left: 10px; }
 
-    form .btn:hover {
-      background-color: #333;
-    }
-
-    form .btn-reset {
-      background-color: #e0e0e0;
-      color: #333;
-      margin-left: 10px;
-    }
-
-    #confirmation-message {
-      font-weight: 500;
-      margin-top: 1.5em;
-    }
+    #confirmation-message { font-weight: 500; margin-top: 1.5em; }
 
     /* ---------- Footer ----------*/
     footer {
@@ -119,8 +100,13 @@
 
     /* ---------- Small screens ----------*/
     @media (max-width: 480px) {
+      header {
+        height: 100vh;            /* fill entire viewport */
+        padding: 0;               /* remove extra space */
+      }
       .logo {
-        width: 150px;
+        width: 90vw;             /* nearly full‑width logo */
+        max-width: none;
       }
       section {
         padding: 1.5em;
