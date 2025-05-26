@@ -163,12 +163,16 @@ header {
 }
 
 /* ---------- Navigation ----------*/
-/* Navigation list styling */
-nav ul {
-  display: flex;
-  list-style: none;
+/* Navigation list styling - ensure no bullets */
+nav ul, nav li, nav ol, footer ul, footer li, .mobile-menu ul, .mobile-menu li {
+  list-style: none !important;
+  list-style-type: none !important;
   margin: 0;
   padding: 0;
+}
+
+nav ul {
+  display: flex;
 }
 
 nav li {
@@ -190,7 +194,8 @@ nav a:hover, nav a.active {
 @media (max-width: 768px) {
   /* Full-screen mobile menu */
   nav ul {
-    list-style: none;
+    list-style: none !important;
+    list-style-type: none !important;
     flex-direction: column;
     position: fixed;
     top: 60px;
