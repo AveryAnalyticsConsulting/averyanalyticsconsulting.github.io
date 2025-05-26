@@ -290,49 +290,82 @@
   <script>
     (function() {
       window.addEventListener('load', function() {
-        // Get the container where we want to place the button
+        // Check if we're in Instagram's in-app browser
+        var isInstagram = /Instagram/.test(navigator.userAgent);
         var container = document.getElementById('appointment-container');
+        var calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true';
         
-        calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true',
-          color: '#000000',
-          label: 'Book an Appointment',
-          target: container,
-        });
-        
-        // Function to adjust iframe and button for mobile/Instagram
-        function adjustForMobile() {
-          var iframe = document.querySelector('#appointment-container iframe');
-          var button = document.querySelector('#appointment-container button');
+        if (isInstagram) {
+          // For Instagram users, create a custom button that opens in external browser
+          var customButton = document.createElement('button');
+          customButton.className = 'btn';
+          customButton.innerHTML = 'Book an Appointment';
+          customButton.style.width = '100%';
+          customButton.style.maxWidth = '300px';
+          customButton.style.margin = '0 auto';
+          customButton.style.display = 'block';
           
-          if (iframe) {
-            iframe.style.maxWidth = '100%';
-            iframe.style.width = '100%';
-            iframe.style.minHeight = '85px';
-            iframe.style.border = 'none';
-          }
+          customButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Open in external browser
+            window.open(calendarUrl, '_blank');
+          });
           
-          if (button) {
-            // Detect if in Instagram browser or similar narrow viewport
-            if (window.innerWidth <= 400 || /Instagram/.test(navigator.userAgent)) {
-              button.style.fontSize = '14px';
-              button.style.padding = '8px 10px';
-              button.style.width = '100%';
-              
-              // Adjust container as well
-              var buttonContainer = document.querySelector('.appointment-button-container > div');
-              if (buttonContainer) {
-                buttonContainer.style.maxWidth = '100%';
+          // Clear container and add our custom button
+          container.innerHTML = '';
+          container.appendChild(customButton);
+          
+          // Add message below button
+          var message = document.createElement('p');
+          message.style.fontSize = '0.85em';
+          message.style.color = '#666';
+          message.style.textAlign = 'center';
+          message.style.marginTop = '10px';
+          message.innerHTML = '(Opens in your default browser for better experience)';
+          container.appendChild(message);
+        } else {
+          // For non-Instagram users, load the normal calendar button
+          calendar.schedulingButton.load({
+            url: calendarUrl,
+            color: '#000000',
+            label: 'Book an Appointment',
+            target: container,
+          });
+          
+          // Function to adjust iframe and button for mobile
+          function adjustForMobile() {
+            var iframe = document.querySelector('#appointment-container iframe');
+            var button = document.querySelector('#appointment-container button');
+            
+            if (iframe) {
+              iframe.style.maxWidth = '100%';
+              iframe.style.width = '100%';
+              iframe.style.minHeight = '85px';
+              iframe.style.border = 'none';
+            }
+            
+            if (button) {
+              // Apply special styling for smaller viewports
+              if (window.innerWidth <= 400) {
+                button.style.fontSize = '14px';
+                button.style.padding = '8px 10px';
+                button.style.width = '100%';
+                
+                // Adjust container as well
+                var buttonContainer = document.querySelector('.appointment-button-container > div');
+                if (buttonContainer) {
+                  buttonContainer.style.maxWidth = '100%';
+                }
               }
             }
           }
+          
+          // Initial adjustment after short delay to ensure button is loaded
+          window.setTimeout(adjustForMobile, 1000);
+          
+          // Also adjust on resize events
+          window.addEventListener('resize', adjustForMobile);
         }
-        
-        // Initial adjustment after short delay to ensure button is loaded
-        window.setTimeout(adjustForMobile, 1000);
-        
-        // Also adjust on resize events
-        window.addEventListener('resize', adjustForMobile);
       });
     })();
   </script>
