@@ -1,558 +1,213 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-  
-  <!-- Primary Meta Tags -->
-  <title>Bookkeeping & Business Consulting | Avery Analytics</title>
-  <meta name="title" content="Bookkeeping & Business Consulting | Avery Analytics">
-  <meta name="author" content="Avery Analytics">
-  <link rel="canonical" href="https://averyanalyticsconsulting.github.io/">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Google Calendar Appointment Scheduling -->
-  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avery Analytics - Professional Bookkeeping Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NKJQXGX03F');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://averyanalyticsconsulting.github.io/assets/logo.png" alt="Avery Analytics Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="cta-button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSclG48QGPCrZUIKK7Gn98coUFEYY4Wa_oMowjZ0wPtWg1nTSA/viewform" target="_blank">Get a Free Quote</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <style>
-    /* ---------- Global resets ----------*/
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #111;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    
-    /* Animation effects */
-    .fade-in {
-      animation: fadeIn 0.8s ease-in;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Bookkeeping Services for Your Business</h1>
+                <p>Let Avery Analytics handle your financial records while you focus on growing your business.</p>
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true" class="btn btn-secondary" target="_blank">Free Consultation</a>
+            </div>
+        </div>
+    </section>
 
-    /* ---------- Header ----------*/
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0.25rem 0;   /* minimal whitespace */
-      background: #fff;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    }
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            
+            <div class="service-category">
+                <h3>Base Bookkeeping Services</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon"><i class="fas fa-tags"></i></div>
+                        <h4>Categorizing Transactions</h4>
+                        <p>We accurately categorize all your business transactions for proper financial tracking and tax preparation.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><i class="fas fa-balance-scale"></i></div>
+                        <h4>Reconciling Accounts</h4>
+                        <p>Regular account reconciliation to ensure your financial records match your bank statements.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h4>Generating Financial Reports</h4>
+                        <p>Comprehensive financial reports including profit and loss statements, balance sheets, and cash flow statements.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-category">
+                <h3>Add-On Services</h3>
+                <div class="services-grid">
+                    <div class="service-card featured">
+                        <div class="icon"><i class="fas fa-comments-dollar"></i></div>
+                        <h4>Business Consulting</h4>
+                        <p>2 hours of expert consultation each month plus financial reporting analysis meetings to provide valuable insights about your business.</p>
+                    </div>
+                    <div class="service-card featured">
+                        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                        <h4>Software Development</h4>
+                        <p>Custom application and website development to help streamline your business operations and improve efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    .logo {
-      width: 250px;          /* keep same desktop size */
-      max-width: 70vw;
-      margin: 0;             /* no extra margin */
-      display: block;
-    }
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose Avery Analytics</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="icon"><i class="fas fa-check-circle"></i></div>
+                    <h4>Accuracy</h4>
+                    <p>Our meticulous attention to detail ensures your financial records are always accurate.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon"><i class="fas fa-lock"></i></div>
+                    <h4>Security</h4>
+                    <p>Your financial data is protected with industry-leading security protocols.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Growth Focus</h4>
+                    <p>We don't just track numbers; we help you understand them to drive business growth.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon"><i class="fas fa-user-clock"></i></div>
+                    <h4>Timely Service</h4>
+                    <p>Regular updates and reports delivered on a consistent schedule you can count on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    /* ---------- Typography ----------*/
-    .cta {
-      font-size: 1.125rem;
-      color: #444;
-      margin: 0.75em 0 0;
-      text-align: center;
-    }
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+            <div class="contact-options">
+                <div class="contact-form">
+                    <h3>Send Us Your Information</h3>
+                    <form id="contact-form" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label for="fullName">Your Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessName">Business Name *</label>
+                            <input type="text" id="businessName" name="businessName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (XXX-XXX-XXXX) *</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Business Website (if any)</label>
+                            <input type="url" id="website" name="website">
+                        </div>
+                        <div class="form-group">
+                            <label for="goals">What goals do you have for your business in the next 6 months?</label>
+                            <textarea id="goals" name="goals" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="additional">Anything else you'd like us to know?</label>
+                            <textarea id="additional" name="additional" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h3>Free Consultation</h3>
+                        <p>Schedule a 30-minute consultation to discuss your bookkeeping needs.</p>
+                        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true" class="btn btn-secondary" target="_blank">Schedule Now</a>
+                    </div>
+                    <div class="cta-card">
+                        <h3>Get a Free Quote</h3>
+                        <p>Request a customized quote for your business needs.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSclG48QGPCrZUIKK7Gn98coUFEYY4Wa_oMowjZ0wPtWg1nTSA/viewform" class="btn btn-secondary" target="_blank">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    /* ---------- Sections ----------*/
-    section {
-      padding: 2em;
-      max-width: 640px;
-      margin: 1em auto 0 auto; /* reduced gap below logo */
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    }
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://averyanalyticsconsulting.github.io/assets/logo.png" alt="Avery Analytics Logo">
+                    <p>Professional bookkeeping services for growing businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSclG48QGPCrZUIKK7Gn98coUFEYY4Wa_oMowjZ0wPtWg1nTSA/viewform" target="_blank">Free Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: <a href="mailto:andrew@averyanalytics.net">andrew@averyanalytics.net</a></p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Avery Analytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5em;
-      color: #222;
-      position: relative;
-    }
-    
-    h2::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      height: 3px;
-      width: 60px;
-      background-color: #000;
-      transition: width 0.3s;
-    }
-    
-    section:hover h2::after {
-      width: 100px;
-    }
-
-    /* ---------- Form styles ----------*/
-    form label    { display: block; font-weight: 600; margin: 1.2em 0 0.25em; }
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .btn,
-    form .btn {
-      background-color: #000;
-      color: #ffffff;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1.5em;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    form .btn:hover { 
-      background-color: #333; 
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    form .btn:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
-    
-    form .btn-reset { 
-      background-color: #ffffff; 
-      color: #333; 
-      margin-left: 10px; 
-    }
-
-    #confirmation-message { font-weight: 500; margin-top: 1.5em; }
-
-    /* ---------- Appointment Booking ----------*/
-    .appointment-button-container {
-      margin: 1.5em 0;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-    
-    .appointment-button-container > div {
-      width: 100% !important;
-      max-width: 300px;
-    }
-    
-    /* Ensure Google Calendar button is responsive */
-    .appointment-button-container button {
-      width: 100% !important;
-      max-width: 100% !important;
-      height: auto !important;
-      min-height: 48px;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px !important;
-      white-space: normal !important;
-      line-height: 1.3 !important;
-      font-size: 16px !important;
-      text-align: center !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-    }
-    
-    /* Fix for Instagram in-app browser */
-    #book-appointment {
-      padding-left: 10px;
-      padding-right: 10px;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* ---------- Footer ----------*/
-    footer {
-      text-align: center;
-      padding: 2em 1em;
-      font-size: 0.875rem;
-      color: #777;
-    }
-
-    /* ---------- Small screens ----------*/
-    @media (max-width: 480px) {
-      .logo {
-        width: 150px;      /* keep original mobile size */
-        max-width: 80vw;
-      }
-      section {
-        padding: 1.5em;
-        margin-top: 1em;  /* reduced gap */
-        margin-left: 1em;
-        margin-right: 1em;
-      }
-      
-      /* Mobile-friendly appointment button */
-      .appointment-button-container button {
-        font-size: 14px !important;
-        padding: 10px 12px !important;
-        min-width: 0 !important;
-      }
-      
-      /* Instagram in-app browser and other very narrow viewports */
-      @media (max-width: 360px) {
-        section {
-          padding: 1em;
-          margin-left: 0.5em;
-          margin-right: 0.5em;
-        }
-        
-        .appointment-button-container > div {
-          max-width: 100%;
-        }
-        
-        .appointment-button-container button {
-          padding: 8px 10px !important;
-        }
-      }
-    }
-      /* Service boxes */
-    .service-boxes {
-      display: flex;
-      gap: 15px;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .service-box {
-      flex: 1;
-      min-width: 180px;
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: all 0.3s;
-      border-bottom: 3px solid transparent;
-    }
-    
-    .service-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      border-bottom: 3px solid #000;
-    }
-    
-    .service-box .icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    .service-box h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-    }
-    
-    /* Highlight box */
-    .highlight-box {
-      background-color: #f8f4e5;
-      border-left: 4px solid #000;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      border-radius: 0 8px 8px 0;
-      font-weight: 500;
-    }
-    
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #000;
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s;
-    }
-    
-    .back-to-top.visible {
-      opacity: 0.7;
-      pointer-events: auto;
-    }
-    
-    .back-to-top:hover {
-      opacity: 1;
-      transform: translateY(-5px);
-    }
-    
-    @media (max-width: 480px) {
-      .service-boxes {
-        flex-direction: column;
-      }
-    }
-</style>
-
-  <!-- Structured Data - LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Avery Analytics",
-    "image": "https://averyanalyticsconsulting.github.io/assets/logo.png",
-    "url": "https://averyanalyticsconsulting.github.io/",
-    "telephone": "",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Norfolk",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    "sameAs": [],
-    "priceRange": "$$",
-    "description": "Local Norfolk, VA bookkeeping services specializing in QuickBooks. We handle transaction categorization, account reconciliation, and monthly reporting for small businesses throughout Virginia."
-  }
-  </script>
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NKJQXGX03F');
-  </script>
-</head>        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<section id="our-process" style="padding: 4rem 2rem; background-color: #ffffff; font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: 2.25rem; margin-bottom: 2rem; color: #111;">Our Process</h2>
-
-    <div style="text-align: left; max-width: 700px; margin: 0 auto;">
-      <h3> Bookkeeping Services <i class="fa-solid fa-money-bill-transfer"></i></h3>
-      <p>We ensure your financial books stay up-to-date and tax-ready while providing monthly financial reports to keep you informed about your business.</p>
-
-      <div style="text-align: center; margin: 1.5rem 0;">
-        <i class="fa-solid fa-arrow-down" style="font-size: 1.5rem; color: #000;"></i>
-      </div>
-
-      <h3> Business Consulting <i class="fa-solid fa-bullseye"></i></h3>
-      <p>With clean books comes more clarity and opportunities for growth. We provide regular strategy calls to generate ideas and help you maintain a competitive edge.</p>
-
-      <div style="text-align: center; margin: 1.5rem 0;">
-        <i class="fa-solid fa-arrow-down" style="font-size: 1.5rem; color: #000;"></i>
-      </div>
-
-      <h3></i> Software Development <i class="fa-solid fa-hammer"></i></h3>
-      <p>Finally, as we identify problems together, we will utilize the newest AI technology to create custom, proprietary tools that streamline your business. </p>
-    </div>
-  </div>
-</section>
-
-<style>
-  .fa-solid {
-    margin: 0 0.5rem;
-  }
-</style>
-      
-            <section id="get-started" style="padding: 4rem 2rem; background-color: #ffffff; font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <div style="max-width: 700px; margin: 0 auto;">
-    <h2 style="font-size: 2.25rem; margin-bottom: 2rem; color: #111; text-align: center;">Get Started</h2>
-
-    <form id="contact-form" aria-labelledby="form-heading" role="form" style="display: flex; flex-direction: column; gap: 1rem;">
-      <label for="name" style="font-weight: 600;">Your Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="business" style="font-weight: 600;">Business Name</label>
-      <input type="text" id="business" name="business" required>
-
-      <label for="email" style="font-weight: 600;">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone" style="font-weight: 600;">Phone Number (XXX‑XXX‑XXXX)</label>
-      <input type="text" id="phone" name="phone">
-
-      <label for="website" style="font-weight: 600;">Business Website (if any)</label>
-      <input type="text" id="website" name="website">
-
-      <label for="services" style="font-weight: 600;">What services are you interested in?</label>
-      <select id="services" name="services" required style="color: #000;">
-        <option value="" disabled selected style="color: #000;">Please select...</option>
-        <option value="Bookkeeping Services">Bookkeeping Services</option>
-        <option value="Business Consulting">Business Consulting</option>
-        <option value="Software Development">Software Development</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <label for="challenges" style="font-weight: 600;">What's your biggest business challenge right now?</label>
-      <textarea id="challenges" name="challenges" rows="3"></textarea>
-
-      <label for="notes" style="font-weight: 600;">Anything else you'd like me to know?</label>
-      <textarea id="notes" name="notes" rows="3"></textarea>
-
-      <div class="cta-buttons" style="display: flex; gap: 1rem; margin-top: 1rem;">
-        <button type="submit" class="btn" style="background-color: #000; color: white; padding: 12px 20px; border-radius: 6px; font-size: 1rem; cursor: pointer; border: none;">Submit</button>
-        <button type="reset" class="btn btn-reset" style="background-color: #ffffff; color: #333; padding: 12px 20px; border-radius: 6px; font-size: 1rem; cursor: pointer; border: none;">Clear All</button>
-      </div>
-
-      <p id="confirmation-message" style="display:none; color: black; margin-top: 1rem;"></p>
-    </form>
-  </div>
-</section>
-
-    </div>
-  </main>
-
-  <!-- Back to top button -->
-  <a href="#" class="back-to-top" id="back-to-top">↑</a>
-  
-  <!-- Scripts -->
-  <script src="../js/main.js"></script>
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKJQXGX03F"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NKJQXGX03F');
-  </script>
-</body>
-</html>
-
-    </div>
-<div id="appointment-container" style="text-align:center; margin: 2rem auto;">
-  <button onclick="window.open('https://calendar.google.com/calendar/appointments/schedules/AcZssZ1xXB2HVp_VenKz8MRi_oU7Fdxu5Xz_TiBmqeq6Qt_b6DRAjrWXPnr3bRqh9n560tfnew80uo23?gv=true', '_blank')"
-          style="background:black; color:white; border:none; border-radius:4px; padding:12px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'SF Pro Display', sans-serif; font-size:16px; width:90%; max-width:280px; cursor:pointer;">
-    Schedule Your Free Consultation
-  </button>
-</div>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2025 Avery Analytics · Norfolk, VA · <a href="mailto:andrew@averyanalytics.net">Email Us</a></p>
-
-        
-      </div>
-    </div>
-  </footer>
-
-
-
-  <!-- ---------- Form handler script ---------- -->
-  <script>
-    const form = document.getElementById("intake-form");
-    const confirmationMessage = document.getElementById("confirmation-message");
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbx5cAK8333mUro0NASlAF2z1lrJsWMiG0M0d3SWm8eRCqrvOzQM7oTpALjgiqI8OoLjOw/exec", {
-          method: "POST",
-          body: formData,
-        });
-        if (response.ok) {
-          form.reset();
-          confirmationMessage.textContent = "Thank you! We’ve received your information and will reach out shortly.";
-          confirmationMessage.style.color = "green";
-        } else {
-          confirmationMessage.textContent = "Something went wrong. Please try again.";
-          confirmationMessage.style.color = "red";
-        }
-      } catch (err) {
-        confirmationMessage.textContent = "Submission failed. Please try again later.";
-        confirmationMessage.style.color = "red";
-      }
-      confirmationMessage.style.display = "block";
-    });
-  </script>
-
-  <!-- ---------- External assets ---------- -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="js/chatbot.js"></script>
-  <script src="js/script.js"></script>
-
-
-
-  <!-- Structured Data - LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Avery Analytics",
-    "image": "https://averyanalyticsconsulting.github.io/assets/logo.png",
-    "url": "https://averyanalyticsconsulting.github.io/",
-    "telephone": "",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Norfolk",
-      "addressRegion": "VA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    "sameAs": [],
-    "priceRange": "$$",
-    "description": "Local Norfolk, VA bookkeeping services specializing in QuickBooks. We handle transaction categorization, account reconciliation, and monthly reporting for small businesses throughout Virginia."
-  }
-  </script>
-
-  <!-- Back to top button -->
-  <a href="#" class="back-to-top" id="back-to-top">↑</a>
-  
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
